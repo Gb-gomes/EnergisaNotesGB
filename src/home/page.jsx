@@ -1,14 +1,12 @@
 import './page.css'
 import energisaIcon from '../assets/energisaicon.png'
-import energisaNotesLogo from '../assets/energisaNotesLogo.png'
-import profileIcon from '../assets/profileicon.png'
-import settingsIcon from '../assets/settingsicon.png'
-import helpIcon from '../assets/helpicon.png'
 import searchIcon from '../assets/searchicon.png'
 import arrowLeft from '../assets/arrowleft.png'
 import arrowRight from '../assets/arrowright.png'
-import { useState } from "react"
 import { useMsal } from "@azure/msal-react"
+
+
+import Header from "../header/page"
 
 export default function Home() {
 
@@ -29,46 +27,16 @@ export default function Home() {
   const { instance } = useMsal()
   const account = instance.getActiveAccount()
 
-  const [open, setOpen] = useState(false)       // pop-up perfil
-  const [openHelp, setOpenHelp] = useState(false) // pop-up ajuda
-
-  function togglePopup() {
-    setOpen(!open)
-  }
-
-  function toggleHelp() {
-    setOpenHelp(!openHelp)
-  }
-
   return (
     <>
-      <div className="app">
-        <header className="topbar">
-          <div className="brand">
-            <img className="brand-img" src={energisaNotesLogo} alt="Energisa Notes Logo" />
-          </div>
+ 
+      <Header />
 
-          <nav className="nav">
-            <button className="nav-pill active">BOOKS</button>
-            <button className="nav-pill">VEÍCULOS</button>
-            <button className="nav-pill">EQUIPES</button>
-            <button className="nav-pill">PORTA-VOZES</button>
-          </nav>
 
-          <div className="icons">
-            <div className="icon" onClick={togglePopup}>
-              <img src={profileIcon} alt="profile" />
-            </div>
-            <div className="icon"><img src={settingsIcon} alt="settings" /></div>
-
-            {/* ÍCONE DE AJUDA */}
-            <div className="icon" onClick={toggleHelp}>
-              <img src={helpIcon} alt="help" />
-            </div>
-          </div>
-        </header>
+      <div className="app" style={{ paddingTop: "90px" }}>
 
         <main className="main">
+
           <div className="search-row">
             <img src={arrowLeft} />
             <div className="search">
@@ -85,47 +53,14 @@ export default function Home() {
               ))}
             </div>
           </div>
+
         </main>
 
         <div className="bottom-logo">
           <img src={energisaIcon} alt="energisa" />
         </div>
+
       </div>
-
-      {/* POP-UP DO PERFIL */}
-      {open && (
-        <div className="profile-popup">
-          <div className="profile-card">
-
-            <h3>Perfil</h3>
-
-            <p><strong>Nome:</strong> {account?.name}</p>
-            <p><strong>Email:</strong> {account?.username}</p>
-            <p><strong>Sobrenome:</strong> {account?.idTokenClaims?.family_name}</p>
-            <p><strong>Telefone:</strong> {account?.idTokenClaims?.phone_number || "Não disponível"}</p>
-
-            <button onClick={() => setOpen(false)}>Fechar</button>
-          </div>
-        </div>
-      )}
-
-      {/* POP-UP DE AJUDA */}
-      {openHelp && (
-        <div className="help-popup">
-          <div className="help-card">
-            <h3>Dúvidas Frequentes</h3>
-
-            <ul>
-              <li>Como usar o sistema?</li>
-              <li>Como reportar um problema?</li>
-              <li>Como alterar minhas informações?</li>
-              <li>Quem posso contatar?</li>
-            </ul>
-
-            <button onClick={() => setOpenHelp(false)}>Fechar</button>
-          </div>
-        </div>
-      )}
     </>
   )
 }

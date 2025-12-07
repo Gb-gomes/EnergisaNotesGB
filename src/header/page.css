@@ -1,0 +1,82 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: #ff7a00;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  border-radius: 0 0 26px 26px;
+  z-index: 999;
+}
+
+/* Marca */
+.brand {
+  display: flex;
+  align-items: center;
+}
+.brand-img {
+  height: 52px;
+  object-fit: contain;
+}
+
+/* Navegação */
+.nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.nav-pill {
+  background: white;
+  padding: 8px 18px;
+  border-radius: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+.nav-pill:hover {
+  background: #f2f2f2;
+}
+
+/* Ícones */
+.icons {
+  display: flex;
+  gap: 10px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.icon img {
+  width: 70%;
+}
+
+/* Popups */
+.profile-popup,
+.help-popup {
+  position: fixed;
+  top: 12%;
+  right: 2%;
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 12px;
+  z-index: 9999;
+}
+
+.profile-card,
+.help-card {
+  background: white;
+  padding: 20px;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
