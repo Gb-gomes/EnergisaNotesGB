@@ -11,7 +11,7 @@
 .app {
   min-height: 100vh;
   background: var(--teal);
-  color: #009FC3;
+  color: #01343a;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
@@ -21,8 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 18px; 
-  height: 64px; 
+  padding: 0 18px; /* remove vertical padding so topbar has fixed height via line-height */
+  height: 64px; /* set explicit height so brand can match it */
   border-radius: 0 0 30px 30px;
 }
 
@@ -111,6 +111,65 @@
 .list::-webkit-scrollbar { width:14px }
 .list::-webkit-scrollbar-track { background: transparent }
 .list::-webkit-scrollbar-thumb { background: var(--white); border-radius:8px }
+
+
+.profile-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25);    
+  display: flex;
+  justify-content: flex-end;  
+  align-items: flex-start;   
+  padding-top: 70px;          
+  padding-right: 20px;        
+  z-index: 999;
+}
+
+/* Cartão do perfil */
+.profile-card {
+  background: white;
+  padding: 20px;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: fadeIn 0.25s ease;
+}
+
+.profile-card h3 {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.profile-card p {
+  margin: 6px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.profile-card button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #0078D4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.profile-card button:hover {
+  background: #005fa3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+
 
 @media (max-width: 640px) {
   .nav { display:none }
