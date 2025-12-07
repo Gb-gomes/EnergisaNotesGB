@@ -63,6 +63,7 @@
 .icon {
   width: 40px;
   height:40px;
+  cursor: pointer;
   border-radius:50%;
   background: white;
   display:flex;
@@ -136,6 +137,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   animation: fadeIn 0.25s ease;
+ 
 }
 
 .profile-card h3 {
@@ -163,6 +165,55 @@
 .profile-card button:hover {
   background: #005fa3;
 }
+
+.help-popup {
+  position: fixed;
+  top: 12%;
+  right: 2%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 12px;
+  z-index: 999;
+}
+
+.help-card {
+  background: #ffffff;
+  padding: 20px;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.help-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.help-card ul {
+  padding-left: 18px;
+  margin-bottom: 15px;
+}
+
+.help-card li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.help-card button {
+  width: 100%;
+  padding: 8px;
+  background: #ff6600;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.help-card button:hover {
+  background: #e15a00;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }

@@ -29,10 +29,15 @@ export default function Home() {
   const { instance } = useMsal()
   const account = instance.getActiveAccount()
 
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false)       // pop-up perfil
+  const [openHelp, setOpenHelp] = useState(false) // pop-up ajuda
 
   function togglePopup() {
     setOpen(!open)
+  }
+
+  function toggleHelp() {
+    setOpenHelp(!openHelp)
   }
 
   return (
@@ -55,7 +60,11 @@ export default function Home() {
               <img src={profileIcon} alt="profile" />
             </div>
             <div className="icon"><img src={settingsIcon} alt="settings" /></div>
-            <div className="icon"><img src={helpIcon} alt="help" /></div>
+
+            {/* ÍCONE DE AJUDA */}
+            <div className="icon" onClick={toggleHelp}>
+              <img src={helpIcon} alt="help" />
+            </div>
           </div>
         </header>
 
@@ -96,6 +105,24 @@ export default function Home() {
             <p><strong>Telefone:</strong> {account?.idTokenClaims?.phone_number || "Não disponível"}</p>
 
             <button onClick={() => setOpen(false)}>Fechar</button>
+          </div>
+        </div>
+      )}
+
+      {/* POP-UP DE AJUDA */}
+      {openHelp && (
+        <div className="help-popup">
+          <div className="help-card">
+            <h3>Dúvidas Frequentes</h3>
+
+            <ul>
+              <li>Como usar o sistema?</li>
+              <li>Como reportar um problema?</li>
+              <li>Como alterar minhas informações?</li>
+              <li>Quem posso contatar?</li>
+            </ul>
+
+            <button onClick={() => setOpenHelp(false)}>Fechar</button>
           </div>
         </div>
       )}
