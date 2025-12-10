@@ -28,12 +28,12 @@ export default function Group() {
       <div className="group-header">
 
         <div className="search-row">
-          <img src={arrowLeft} />
+       
               <div className="search">
                   <img src={searchIcon} className="search-img" alt="search" />
                   <input placeholder="Pesquisar" />
               </div>
-          <img src={arrowRight} alt="go" />
+          
         </div>
 
 
