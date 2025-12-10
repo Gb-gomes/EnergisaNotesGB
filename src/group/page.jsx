@@ -1,6 +1,8 @@
 import './page.css'
 import searchIcon from '../assets/searchicon.png'
 import { useMsal } from "@azure/msal-react"
+import arrowLeft from '../assets/arrowleft.png'
+import arrowRight from '../assets/arrowright.png'
 
 import Header from "../header/page"
 
@@ -24,11 +26,19 @@ export default function Group() {
     <Header />
     <div className="group-page">
       <div className="group-header">
-        <div className="search-group">
-          <img src={searchIcon} className="search-img" alt="Buscar" />
-          <input type="text" placeholder="Pesquisar grupo..." />
+
+        <div className="search-row">
+          <img src={arrowLeft} />
+              <div className="search">
+                  <img src={searchIcon} className="search-img" alt="search" />
+                  <input placeholder="Pesquisar" />
+              </div>
+          <img src={arrowRight} alt="go" />
         </div>
+
+
         <h1>Área</h1>
+        <div className="rowOrange"></div>
       </div>
       <div className="group-list">
         {groups.map((g, i) => (

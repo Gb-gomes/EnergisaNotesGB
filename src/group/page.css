@@ -15,6 +15,12 @@
   margin-bottom: 40px;
 }
 
+.rowOrange{
+  border: 5px solid orange;
+  width: 45%;
+
+}
+
 .group-header h1 {
   font-size: 32px;
   font-weight: bold;
@@ -34,6 +40,9 @@
   width: 400px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+.search-row { display:flex; align-items:center; gap:18px; width:100%; max-width:920px; }
+.search-row > img { width:50px; height:50px; cursor:pointer; }
 
 .search-group input {
   border: none;
