@@ -26,7 +26,7 @@ export default function Header() {
           <Link to="/home" className="nav-pill">BOOKS</Link>
           <Link to="/veiculos" className="nav-pill">VEÍCULOS</Link>
           <Link to="/group" className="nav-pill">EQUIPES</Link>
-          <Link to="/porta-vozes" className="nav-pill">PORTA-VOZES</Link>
+          <Link to="/portavozes" className="nav-pill">PORTA-VOZES</Link>
         </nav>
 
         <div className="icons">

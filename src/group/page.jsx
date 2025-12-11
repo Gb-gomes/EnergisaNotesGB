@@ -54,7 +54,7 @@ export default function Group() {
               <img src={energisaIcon} alt="energisa" />
             </div>
   </div>
-)
+
     </>
   )
 }
