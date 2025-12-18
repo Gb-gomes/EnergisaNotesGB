@@ -21,7 +21,14 @@ export default function Home() {
     'Contrato com terceiros',
     'Danos',
     'Eleições',
-    'Projeto técnico'
+    'Projeto técnico',
+    'Questões trabalhistas',
+    'Racionamento', 
+    'Reclamações',
+    'Serviços', 
+    'Tributos',
+    'Violência'
+
   ]
 
   const { instance } = useMsal()
