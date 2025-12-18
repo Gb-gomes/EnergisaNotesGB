@@ -80,3 +80,276 @@
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
+
+/* ========== RESPONSIVIDADE ========== */
+
+/* Tablets (768px a 1024px) */
+@media (max-width: 1024px) {
+  .topbar {
+    height: 60px;
+    padding: 0 15px;
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .brand-img {
+    height: 60px;
+  }
+  
+  .nav-pill {
+    padding: 7px 15px;
+    font-size: 14px;
+  }
+  
+  .icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .profile-popup,
+  .help-popup {
+    top: 10%;
+    right: 1.5%;
+  }
+  
+  .profile-card,
+  .help-card {
+    width: 240px;
+    padding: 18px;
+  }
+}
+
+/* Tablets pequenos e celulares grandes (576px a 768px) */
+@media (max-width: 768px) {
+  .topbar {
+    height: 56px;
+    padding: 0 12px;
+    border-radius: 0 0 16px 16px;
+  }
+  
+  .brand-img {
+    height: 50px;
+  }
+  
+  .nav {
+    gap: 8px;
+  }
+  
+  .nav-pill {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 18px;
+  }
+  
+  .icons {
+    gap: 8px;
+  }
+  
+  .icon {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .profile-popup,
+  .help-popup {
+    top: 9%;
+    right: 1%;
+    padding: 15px;
+  }
+  
+  .profile-card,
+  .help-card {
+    width: 220px;
+    padding: 16px;
+    font-size: 14px;
+  }
+  
+  .profile-card h3,
+  .help-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Celulares médios (480px a 576px) */
+@media (max-width: 576px) {
+  .topbar {
+    height: 52px;
+    padding: 0 10px;
+    border-radius: 0 0 12px 12px;
+    justify-content: space-around;
+  }
+  
+  .brand-img {
+    height: 45px;
+  }
+  
+  .nav {
+    gap: 6px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 56px;
+    background: #ff7a00;
+    padding: 8px;
+    border-radius: 0 0 16px 16px;
+    display: none; /* Vamos usar JS para toggle */
+  }
+  
+  .nav.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .nav-pill {
+    padding: 8px 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .icons {
+    gap: 6px;
+  }
+  
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Menu hamburguer para mobile */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-popup,
+  .help-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: auto;
+    width: 90%;
+    max-width: 300px;
+  }
+  
+  .profile-card,
+  .help-card {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+  .topbar {
+    height: 50px;
+    padding: 0 8px;
+  }
+  
+  .brand-img {
+    height: 40px;
+  }
+  
+  .nav.active {
+    top: 50px;
+    max-width: 280px;
+  }
+  
+  .nav-pill {
+    padding: 7px 16px;
+    font-size: 13px;
+  }
+  
+  .icons {
+    gap: 5px;
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .menu-toggle {
+    width: 28px;
+    height: 22px;
+  }
+  
+  .profile-card,
+  .help-card {
+    padding: 14px;
+    font-size: 13px;
+  }
+  
+  .profile-card h3,
+  .help-card h3 {
+    font-size: 15px;
+  }
+}
+
+/* Para telas muito pequenas (até 360px) */
+@media (max-width: 360px) {
+  .topbar {
+    height: 48px;
+    padding: 0 5px;
+  }
+  
+  .brand-img {
+    height: 36px;
+  }
+  
+  .nav.active {
+    max-width: 250px;
+  }
+  
+  .nav-pill {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+  
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .menu-toggle {
+    width: 26px;
+    height: 20px;
+  }
+  
+  .profile-card,
+  .help-card {
+    padding: 12px;
+  }
+}
+
+/* Para garantir que os popups não fiquem cortados em mobile */
+@media (max-height: 600px) {
+  .profile-popup,
+  .help-popup {
+    top: 15%;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .profile-card,
+  .help-card {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}

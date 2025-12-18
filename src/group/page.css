@@ -103,18 +103,53 @@ body {
   color: #003b57;
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE - Mantendo seu código original e adicionando ajustes */
+
 @media (max-width: 768px) {
+  .group-page {
+    padding: 15px;
+    padding-top: 90px;
+  }
+  
+  .group-header {
+    margin-bottom: 30px;
+  }
+  
+  .group-header h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .rowOrange {
+    width: 60%;
+  }
+  
   .search-group {
-    width: 90%;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 18px;
+  }
+  
+  .search-row {
+    justify-content: center;
+    gap: 15px;
+    max-width: 100%;
+  }
+  
+  .search-row > img {
+    width: 45px;
+    height: 45px;
   }
   
   .group-list {
     padding: 0 10px;
+    max-width: 600px;
   }
   
   .group-item {
     padding: 18px 20px;
+    gap: 15px;
   }
   
   .group-item img {
@@ -124,5 +159,114 @@ body {
   
   .group-item span {
     font-size: 18px;
+    text-align: center;
+  }
+  
+  .bottom-logo {
+    text-align: center;
+    margin-top: 25px;
+  }
+  
+  .bottom-logo img {
+    max-width: 50px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .group-page {
+    padding: 10px;
+    padding-top: 80px;
+  }
+  
+  .group-header h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .rowOrange {
+    width: 70%;
+    border-width: 4px;
+  }
+  
+  .search-group {
+    padding: 8px 16px;
+    border-radius: 40px;
+  }
+  
+  .search-group input {
+    font-size: 14px;
+  }
+  
+  .search-row {
+    gap: 10px;
+  }
+  
+  .search-row > img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .group-list {
+    gap: 15px;
+    padding: 0 5px;
+  }
+  
+  .group-item {
+    padding: 15px;
+    gap: 12px;
+    border-radius: 10px;
+  }
+  
+  .group-item img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .group-item span {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  
+  .bottom-logo {
+    margin-top: 25px;
+  }
+  
+  .bottom-logo img {
+    max-width: 60px;
+  }
+}
+
+/* Para telas muito pequenas (smartphones menores) */
+@media (max-width: 360px) {
+  .group-header h1 {
+    font-size: 22px;
+  }
+  
+  .group-item {
+    padding: 12px 10px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .group-item span {
+    font-size: 15px;
+  }
+  
+  .search-row > img {
+    width: 35px;
+    height: 35px;
+  }
+
+}
+
+/* Para telas grandes (desktops grandes) */
+@media (min-width: 1200px) {
+  .group-list {
+    max-width: 800px;
+  }
+  
+  .group-item span {
+    font-size: 22px;
   }
 }

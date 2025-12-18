@@ -14,19 +14,32 @@ export default function Header() {
 
   const [openProfile, setOpenProfile] = useState(false)
   const [openHelp, setOpenHelp] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  // Fecha menu quando clica em um link
+  const handleLinkClick = () => {
+    setMenuOpen(false)
+  }
 
   return (
     <>
       <header className="topbar">
+        {/* Menu Hamburguer para mobile */}
+        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
         <div className="brand">
           <img className="brand-img" src={energisaNotesLogo} alt="logo" />
         </div>
 
-        <nav className="nav">
-          <Link to="/home" className="nav-pill">BOOKS</Link>
-          <Link to="/veiculos" className="nav-pill">VEÍCULOS</Link>
-          <Link to="/group" className="nav-pill">EQUIPES</Link>
-          <Link to="/portavozes" className="nav-pill">PORTA-VOZES</Link>
+        <nav className={`nav ${menuOpen ? 'active' : ''}`}>
+          <Link to="/home" className="nav-pill" onClick={handleLinkClick}>BOOKS</Link>
+          <Link to="/veiculos" className="nav-pill" onClick={handleLinkClick}>VEÍCULOS</Link>
+          <Link to="/group" className="nav-pill" onClick={handleLinkClick}>EQUIPES</Link>
+          <Link to="/portavozes" className="nav-pill" onClick={handleLinkClick}>PORTA-VOZES</Link>
         </nav>
 
         <div className="icons">

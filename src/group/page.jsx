@@ -1,8 +1,8 @@
 import './page.css'
 import searchIcon from '../assets/searchicon.png'
 import { useMsal } from "@azure/msal-react"
-import arrowLeft from '../assets/arrowleft.png'
-import arrowRight from '../assets/arrowright.png'
+// import arrowLeft from '../assets/arrowleft.png'
+// import arrowRight from '../assets/arrowright.png'
 import energisaIcon from '../assets/energisaicon.png'
 
 import Header from "../header/page"
